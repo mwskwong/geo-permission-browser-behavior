@@ -3,6 +3,9 @@ import { useState } from "react";
 export default function App() {
   const [geolocation, setGeolocation] = useState<
     | {
+        status: "loading";
+      }
+    | {
         status: "success";
         position: GeolocationPosition;
       }
@@ -16,7 +19,7 @@ export default function App() {
     <div>
       <button
         onClick={() => {
-          setGeolocation(undefined);
+          setGeolocation({ status: "loading" });
           navigator.geolocation.getCurrentPosition(
             (position) => setGeolocation({ status: "success", position }),
             (error) => setGeolocation({ status: "error", error }),
@@ -29,9 +32,10 @@ export default function App() {
       <p>{geolocation?.status}</p>
       <pre style={{ textAlign: "start" }}>
         <p>
-          {geolocation &&
-            (geolocation.status === "success"
-              ? JSON.stringify(
+          {(() => {
+            switch (geolocation?.status) {
+              case "success":
+                return JSON.stringify(
                   {
                     coords: {
                       latitude: geolocation.position.coords.latitude,
@@ -47,15 +51,18 @@ export default function App() {
                   },
                   null,
                   2
-                )
-              : JSON.stringify(
+                );
+              case "error":
+                return JSON.stringify(
                   {
                     code: geolocation.error.code,
                     message: geolocation.error.message,
                   },
                   null,
                   2
-                ))}
+                );
+            }
+          })()}
         </p>
       </pre>
     </div>
