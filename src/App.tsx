@@ -15,7 +15,7 @@ export default function App() {
       }
   >();
 
-  const url = "www.hkjc.com";
+  const url = "https://www.hkjc.com";
   return (
     <div>
       <button
