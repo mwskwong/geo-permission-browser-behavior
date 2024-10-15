@@ -23,14 +23,14 @@ export default function App() {
           window.open(url, "_blank");
         }}
       >
-        window.open(google, _blank)
+        window.open(hkjc, _blank)
       </button>
       <button
         onClick={async () => {
           window.open(url, "_blank");
         }}
       >
-        window.open(google, _blank) async
+        window.open(hkjc, _blank) async
       </button>
       <button
         onClick={async () => {
