@@ -50,6 +50,7 @@ export default function App() {
             "https://jsonplaceholder.typicode.com/todos/1"
           );
           const body = await response.json();
+          console.log(body);
           window.open(url, "_blank");
         }}
       >
