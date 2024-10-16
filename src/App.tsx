@@ -58,6 +58,18 @@ export default function App() {
       </button>
       <button
         onClick={() => {
+          fetch("https://jsonplaceholder.typicode.com/todos/1")
+            .then((response) => response.json())
+            .then((body) => {
+              console.log(body);
+              window.open(url, "_blank");
+            });
+        }}
+      >
+        call API, in then() calling window.open(hkjc, _blank)
+      </button>
+      <button
+        onClick={() => {
           setGeolocation({ status: "loading" });
           navigator.geolocation.getCurrentPosition(
             (position) => setGeolocation({ status: "success", position }),
