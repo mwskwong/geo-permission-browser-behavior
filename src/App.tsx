@@ -34,15 +34,26 @@ export default function App() {
       </button>
       <button
         onClick={async () => {
-          const link = document.createElement('a');
+          const link = document.createElement("a");
           link.href = url;
-          link.target = '_blank';
+          link.target = "_blank";
           document.body.appendChild(link);
 
           link.click();
         }}
       >
         create link and click programmatically async
+      </button>
+      <button
+        onClick={async () => {
+          const response = await fetch(
+            "https://jsonplaceholder.typicode.com/todos/1"
+          );
+          const body = await response.json();
+          window.open(url, "_blank");
+        }}
+      >
+        call and await API before calling window.open(hkjc, _blank) async
       </button>
       <button
         onClick={() => {
