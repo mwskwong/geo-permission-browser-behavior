@@ -69,6 +69,42 @@ export default function App() {
         call API, in then() calling window.open(hkjc, _blank)
       </button>
       <button
+        onClick={async () => {
+          const response = await fetch(
+            "https://jsonplaceholder.typicode.com/todos/1"
+          );
+          const body = await response.json();
+          console.log(body);
+          
+          const link = document.createElement("a");
+          link.href = url;
+          link.target = "_blank";
+          document.body.appendChild(link);
+
+          link.click();
+        }}
+      >
+        call and await API before create link and click programmatically async
+      </button>
+      <button
+        onClick={() => {
+          fetch("https://jsonplaceholder.typicode.com/todos/1")
+            .then((response) => response.json())
+            .then((body) => {
+              console.log(body);
+              
+              const link = document.createElement("a");
+              link.href = url;
+              link.target = "_blank";
+              document.body.appendChild(link);
+    
+              link.click();
+            });
+        }}
+      >
+        call API, in then() create link and click programmatically
+      </button>
+      <button
         onClick={() => {
           setGeolocation({ status: "loading" });
           navigator.geolocation.getCurrentPosition(
