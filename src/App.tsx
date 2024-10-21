@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export default function App() {
   const url = "https://www.hkjc.com";
 
-  const [shouldOpen, setShouldOpen] = useState();
+  const [shouldOpen, setShouldOpen] = useState(false);
   useEffect(() => {
     if (shouldOpen) {
       window.open(url, '_blank')
