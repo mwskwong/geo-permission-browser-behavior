@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 export default function App() {
   const url = "https://fps.payapps.hkicl.com.hk";
 
   const [shouldOpen, setShouldOpen] = useState(false);
   useEffect(() => {
     if (shouldOpen) {
-      window.open(url, '_blank')
+      window.open(url, "_blank");
       setShouldOpen(false);
     }
-  }, [shouldOpen])
-
+  }, [shouldOpen]);
 
   // const link = document.createElement("a");
   // link.href = url;
@@ -29,6 +32,7 @@ export default function App() {
           );
           const body = await response.json();
           console.log(body);
+          await sleep(3000);
           // window.open(url, "_blank");
 
           if (winOpenRef) {
@@ -41,8 +45,11 @@ export default function App() {
       <button
         onClick={() => {
           const winOpenRef = window.open();
-          fetch("https://jsonplaceholder.typicode.com/todos/1")
-            .then((response) => response.json())
+          Promise.all([
+            fetch("https://jsonplaceholder.typicode.com/todos/1"),
+            sleep(3000),
+          ])
+            .then(([response]) => response.json())
             .then((body) => {
               console.log(body);
               if (winOpenRef) {
@@ -63,7 +70,8 @@ export default function App() {
           setShouldOpen(true);
         }}
       >
-        call and await API before setting state to trigger useEffect to call window.open
+        call and await API before setting state to trigger useEffect to call
+        window.open
       </button>
     </div>
   );
