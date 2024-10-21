@@ -83,7 +83,7 @@ export default function App() {
           await sleep(3000);
 
           setTimeout(() => {
-            window.open(url)
+            window.open(url, '_top')
           })
         }}
       >
