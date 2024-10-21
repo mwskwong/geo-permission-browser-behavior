@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function App() {
-  const url = "https://www.hkjc.com";
+  const url = "https://fps.payapps.hkicl.com.hk";
 
   const [shouldOpen, setShouldOpen] = useState(false);
   useEffect(() => {
