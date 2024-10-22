@@ -123,6 +123,35 @@ export default function App() {
       >
         Create a button and click programetically
       </button>
+      <button
+        onClick={async () => {
+          const winOpenRef = window.open();
+          const response = await fetch(
+            "https://jsonplaceholder.typicode.com/todos/1"
+          );
+          const body = await response.json();
+          console.log(body);
+          await sleep(3000);
+          // window.open(url, "_blank");
+
+          if (winOpenRef) {
+            winOpenRef.document.write(`
+              <html>
+                <body>
+                  <script>
+                    setTimeout(() => {
+                      window.location.href = '${url}';
+                    }, 100);
+                  </script>
+                  <p>Loading...</p>
+                </body>
+              </html>
+            `);
+          }
+        }}
+      >
+        first load a intermediate page, then use window.location.href to replace URL
+      </button>
     </div>
   );
 }
