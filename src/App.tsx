@@ -104,6 +104,25 @@ export default function App() {
       >
         window.open with noreferrer
       </button>
+      <button
+        onClick={async () => {
+          const response = await fetch(
+            "https://jsonplaceholder.typicode.com/todos/1"
+          );
+          const body = await response.json();
+          console.log(body);
+          await sleep(3000);
+          
+          const button = document.createElement('button');
+          button.style.display = 'none';
+          document.body.appendChild(button);
+          button.onclick = () => window.open(url, '_blank');
+          button.click();
+          document.body.removeChild(button);
+        }}
+      >
+        Create a button and click programetically
+      </button>
     </div>
   );
 }
