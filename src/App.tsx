@@ -90,6 +90,20 @@ export default function App() {
         call and await API before setting state to trigger useEffect to call
         window.open
       </button>
+      <button
+        onClick={async () => {
+          const response = await fetch(
+            "https://jsonplaceholder.typicode.com/todos/1"
+          );
+          const body = await response.json();
+          console.log(body);
+          await sleep(3000);
+
+         window.open(url, '_blank', 'noreferrer')
+        }}
+      >
+        window.open with noreferrer
+      </button>
     </div>
   );
 }
