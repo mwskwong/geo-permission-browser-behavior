@@ -36,7 +36,7 @@ export default function App() {
           // window.open(url, "_blank");
 
           if (winOpenRef) {
-            winOpenRef.location = url;
+            winOpenRef.location.href = url;
           }
         }}
       >
@@ -53,7 +53,7 @@ export default function App() {
             .then((body) => {
               console.log(body);
               if (winOpenRef) {
-                winOpenRef.location = url;
+                winOpenRef.location.href = url;
               }
             });
         }}
