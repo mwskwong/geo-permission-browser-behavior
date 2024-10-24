@@ -140,8 +140,8 @@ export default function App() {
                 <body>
                   <script>
                     setTimeout(() => {
-                      // window.location.replace('${url}');
-                      history.pushState(null, '', '${url}');
+                      window.location.replace('${url}');
+                      // history.pushState(null, '', '${url}');
                     }, 100);
                   </script>
                   <p>Loading...</p>
