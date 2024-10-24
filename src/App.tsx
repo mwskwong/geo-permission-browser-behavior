@@ -153,6 +153,7 @@ export default function App() {
       >
         first load a intermediate page, then use window.location.href to replace URL
       </button>
+      <a href={url} target="_blank">just a simple new tab link</a>
     </div>
   );
 }
