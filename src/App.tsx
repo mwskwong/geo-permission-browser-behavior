@@ -154,7 +154,7 @@ export default function App() {
         first load a intermediate page, then use window.location.href to replace URL
       </button>
       <a href={url} target="_blank">just a simple new tab link</a>
-      <button onClick={() => window.opne(url)}>simple button open new window</button>
+      <button onClick={() => window.open(url)}>simple button open new window</button>
     </div>
   );
 }
