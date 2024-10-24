@@ -140,7 +140,7 @@ export default function App() {
                 <body>
                   <script>
                     setTimeout(() => {
-                      window.location.href = '${url}';
+                      window.location.replace('${url}');
                     }, 100);
                   </script>
                   <p>Loading...</p>
