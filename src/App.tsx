@@ -160,7 +160,7 @@ export default function App() {
         <button type="submit">Submit</button>
       </form>
       <input name="test2" />
-       <form onSubmit={e => { e.preventDefault() }}>
+       <form onSubmit={() => {}}>
         <input name="test3" />
         <button>Submit</button>
       </form>
