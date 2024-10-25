@@ -159,6 +159,7 @@ export default function App() {
         <input name="test" />
         <button type="submit">Submit</button>
       </form>
+      <input name="test2" />
     </div>
   );
 }
