@@ -155,6 +155,10 @@ export default function App() {
       </button>
       <a href={url} target="_blank">just a simple new tab link</a>
       <button onClick={() => window.open(url)}>simple button open new window</button>
+      <form onSubmit={() => alert("form sumitted")}>
+        <input name="test" />
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 }
