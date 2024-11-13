@@ -1,9 +1,3 @@
-import { useEffect, useState } from "react";
-
-function sleep(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 export default function App() {
 
   return (
