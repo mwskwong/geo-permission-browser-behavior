@@ -6,7 +6,7 @@ export default function App() {
   return (
     <div
       ref={divRef}
-      onClick={(target) => {
+      onClick={(event) => {
         console.log({
           target: event.target,
           ref: divRef.current,
