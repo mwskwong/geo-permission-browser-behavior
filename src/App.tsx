@@ -12,7 +12,7 @@ export default function App() {
           ref: divRef.current,
           isEqual: divRef.current === event.target
         })
-      }
+      }}
     >
       <h1>Heading 1</h1>
       <p 
