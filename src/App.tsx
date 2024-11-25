@@ -21,6 +21,7 @@ export default function App() {
           fontSize: "13px",
           textSizeAdjust: "100%",
         }}
+        onClick={() => console.log("yo")}
       >
         Paragraph
       </p>
