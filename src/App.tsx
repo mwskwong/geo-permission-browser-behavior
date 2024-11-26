@@ -1,5 +1,7 @@
 import { useRef } from 'react';
 
+const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
 export default function App() {
   const divRef = useRef(null);
   
@@ -25,6 +27,14 @@ export default function App() {
       >
         Paragraph
       </p>
+      <button
+        onClick={() => {
+          sleep(3000).finally(() => window.close());
+          window.open("https://google.com");
+        }}  
+      >
+        Button
+      </button>
     </div>
   );
 }
