@@ -1,23 +1,10 @@
-import { useState } from 'react';
-
-const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+const url = "https://sim.fps.payapps.hkicl.com.hk/?pay_req_obj=https%3A%2F%2Fexample.com&callback=https%3A%2F%2Fexample.com";
 
 export default function App() {  
-  const [canNext, setCanNext] = useState(false);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setCanNext(true);
-    }, 500);
-
-    return () => clearTimeout(timeout);
-  }, [])
-  
   return (
     <div>
-      <div className={`startBtn ${canNext ? '' : 'disable'}`}>
-        some text
-      </div>
+      <a href={url} target="_blank">HKICL page</a>
+      <button onClick={() => window.open(url)}>HKICL page</button>
     </div>
   );
 }
