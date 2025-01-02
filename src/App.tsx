@@ -6,13 +6,13 @@ export default function App() {
           padding: 24,
           backgroundColor: "red",
           width: "100%",
-          position: "sticky",
+          position: "fixed",
           top: 0,
         }}
       >
         sticky
       </div>
-      <div style={{ width: "100%", height: 3000 }}>
+      <div style={{ width: "100%", height: 3000, paddingTop: 40 }}>
         content
         <input style={{ width: 100 }} />
       </div>
