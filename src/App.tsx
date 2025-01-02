@@ -8,9 +8,10 @@ export default function App() {
           width: "100%",
           position: "fixed",
           top: 0,
+          left: 0,
         }}
       >
-        sticky
+        fixed
       </div>
       <div style={{ width: "100%", height: 3000, paddingTop: 40 }}>
         content
