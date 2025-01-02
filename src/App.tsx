@@ -14,7 +14,7 @@ export default function App() {
       </div>
       <div style={{ width: "100%", height: 3000 }}>
         content
-        <input style={{ width: 300 }} />
+        <input style={{ width: 100 }} />
       </div>
     </div>
   );
