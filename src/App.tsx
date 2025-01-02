@@ -12,7 +12,10 @@ export default function App() {
       >
         sticky
       </div>
-      <div style={{ width: "100%", height: 3000 }}>content</div>
+      <div style={{ width: "100%", height: 3000 }}>
+        content
+        <input style={{ width: 300 }} />
+      </div>
     </div>
   );
 }
