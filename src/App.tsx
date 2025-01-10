@@ -5,6 +5,7 @@ export default function App() {
       <button
         onClick={() => {
           window.open(callbackUrl + "?is_successful=0", "_blank");
+          window.close();
         }}
       >
         test window.open
