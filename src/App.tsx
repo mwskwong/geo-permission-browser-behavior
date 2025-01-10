@@ -1,22 +1,14 @@
 export default function App() {
+  const callbackUrl = "https://example.com";
   return (
     <div>
-      <div
-        style={{
-          padding: 24,
-          backgroundColor: "red",
-          width: "100%",
-          position: "fixed",
-          top: 0,
-          left: 0,
+      <button
+        onClick={() => {
+          window.open(callbackUrl + "?is_successful=0", "_blank");
         }}
       >
-        fixed
-      </div>
-      <div style={{ width: "100%", height: 3000, paddingTop: 40 }}>
-        content
-        <input style={{ width: 100 }} />
-      </div>
+        test window.open
+      </button>
     </div>
   );
 }
