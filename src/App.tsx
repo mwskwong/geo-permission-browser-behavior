@@ -23,7 +23,7 @@ export default function App() {
           link.click();
         }}
       >
-        sleep 3s and then window.open in new tab
+        sleep 3s and then programmetically create a link and click it
       </button>
     </div>
   );
