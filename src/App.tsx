@@ -1,14 +1,29 @@
+const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
+
 export default function App() {
-  const callbackUrl = "https://example.com";
+  const hkiclUrl = "https://fps.payapps.hkicl.com.hk/";
   return (
     <div>
       <button
-        onClick={() => {
-          window.open(callbackUrl + "?is_successful=0", "_blank");
-          window.close();
+        onClick={async () => {
+          await sleep(3000);
+          window.open(hkiclUrl, "_blank");
         }}
       >
-        test window.open
+        sleep 3s and then window.open in new tab
+      </button>
+      <button
+        onClick={async () => {
+          await sleep(3000);
+
+          const link = document.createElement('a');
+          link.href = hkiclUrl;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.click();
+        }}
+      >
+        sleep 3s and then window.open in new tab
       </button>
     </div>
   );
