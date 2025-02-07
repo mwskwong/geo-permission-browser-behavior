@@ -6,7 +6,7 @@ export default function App() {
           position: "fixed",
           bottom: 0,
           right: 0,
-          width: "100%",
+          left: 0,
           padding: 16,
           backgroundColor: "red",
         }}
