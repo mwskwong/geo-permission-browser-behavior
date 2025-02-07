@@ -75,9 +75,5 @@ button:focus-visible {
 }
 
 .bottomBar {
-  padding-bottom: 16px;
-  
-  @media (orientation: landscape) {
-    padding-bottom: calc(16px + env(safe-area-inset-bottom));    
-  }
+  padding: 1em 1em calc(1em + env(safe-area-inset-bottom));
 }
