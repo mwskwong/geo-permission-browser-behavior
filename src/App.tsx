@@ -3,28 +3,11 @@ const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
 export default function App() {
   const hkiclUrl = "https://fps.payapps.hkicl.com.hk/";
   return (
-    <div>
-      <button
-        onClick={async () => {
-          await sleep(3000);
-          window.open(hkiclUrl, "_blank");
-        }}
-      >
-        sleep 3s and then window.open in new tab
-      </button>
-      <button
-        onClick={async () => {
-          await sleep(3000);
+    <div style={{ height: 2000 }}>
 
-          const link = document.createElement('a');
-          link.href = hkiclUrl;
-          link.target = "_blank";
-          link.rel = "noopener noreferrer";
-          link.click();
-        }}
-      >
-        sleep 3s and then programmetically create a link and click it
-      </button>
+      <div style={{ position: "fixed", bottom: 0, right: 0, width: "100%", padding: 16, backgroundColor: "red" }}>
+        stick to bottom
+      </div>
     </div>
   );
 }
