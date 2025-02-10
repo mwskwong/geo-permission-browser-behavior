@@ -15,6 +15,9 @@
   align-items: center;
   justify-content: center;
   position: relative;
+
+  /* inherit from parent */
+  color: black;
 }
 
 .wait-pay-result-close {
@@ -29,7 +32,6 @@
   /* inherit from parent */
   display: block;
   vertical-align: middle;
-  color: black;
 
   animation: rotate 2s linear infinite;
 }
