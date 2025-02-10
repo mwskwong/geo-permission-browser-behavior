@@ -26,8 +26,10 @@
 }
 
 .wait-pay-result-loading {
+  /* inherit from parent */
   display: block;
   vertical-align: middle;
+  color: black;
 
   animation: rotate 2s linear infinite;
 }
