@@ -1,18 +1,10 @@
+import loading from "./loading.png";
+import styles from "./App.module.css";
+
 export default function App() {
   return (
-    <div style={{ height: 2000 }}>
-      <div
-        style={{
-          position: "fixed",
-          bottom: 0,
-          right: 0,
-          left: 0,
-          backgroundColor: "red",
-        }}
-        className="bottomBar"
-      >
-        stick to bottom
-      </div>
+    <div>
+      <img className={styles.loading} src={loading} width={40} height={41} />
     </div>
   );
 }
