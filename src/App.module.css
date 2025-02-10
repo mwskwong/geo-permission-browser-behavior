@@ -26,6 +26,7 @@
 }
 
 .wait-pay-result-loading {
+  display: block;
   animation: rotate 2s linear infinite;
 }
 
