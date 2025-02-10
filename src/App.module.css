@@ -26,7 +26,9 @@
 }
 
 .wait-pay-result-loading {
-  display: inline;
+  display: block;
+  vertical-align: middle;
+
   animation: rotate 2s linear infinite;
 }
 
