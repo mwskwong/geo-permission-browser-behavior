@@ -15,7 +15,7 @@ export default function App() {
   }, []);
 
   return (
-    <pre>
+    <pre style={{ textAlign: "start" }}>
       <code>{JSON.stringify(uaData, null, 2)}</code>
     </pre>
   );
