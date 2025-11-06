@@ -1,38 +1,22 @@
-import loading from "./loading.png";
-import styles from "./App.module.css";
-
-const showClose = true;
+import { useEffect, useState } from "react";
 
 export default function App() {
+  const [uaData, setUaData] = useState();
+
+  useEffect(() => {
+    (async () =>
+      setUaData(
+        // @ts-expect-error using experimental API
+        await navigator.userAgentData.getHighEntropyValues([
+          "model",
+          "platform",
+        ])
+      ))();
+  }, []);
+
   return (
-    <div className={styles["wait-pay-result"]}>
-      {showClose && (
-        <img
-          // src={close}
-          alt="close"
-          width={25}
-          height={25}
-          className={styles["wait-pay-result-close"]}
-          // onClick={() => {
-          //   setShow(false);
-          // }}
-        />
-      )}
-      <img
-        className={styles["wait-pay-result-loading"]}
-        src={loading}
-        width={40}
-        height={41}
-      />
-      <span className={styles["wait-pay-result-title"]}>Title</span>
-      <span className={styles["wait-pay-result-message"]}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-        <br />
-        <br />
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-        ut aliquip ex ea commodo consequat.
-      </span>
-    </div>
+    <pre>
+      <code>{JSON.stringify(uaData, null, 2)}</code>
+    </pre>
   );
 }
